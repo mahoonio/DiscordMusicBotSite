@@ -1,3 +1,53 @@
 .navbrand {
-  margin: 5px 60px 5px 0px;
+  margin: 5px 60px 0px 0px;
+  color: rgb(118, 195, 211) !important;
+  -webkit-transition: color 0.2s;
+  -moz-transition: color 0.2s;
+  -ms-transition: color 0.2s;
+  -o-transition: color 0.2s;
+  transition: color 0.2s;
+}
+.navbrand:hover {
+  color: #47b5ff !important;
+}
+.navlinks {
+  margin: 5px 5px 5px 0px;
+
+  font-size: 22px;
+  -webkit-transition: color 0.2s;
+  -moz-transition: color 0.2s;
+  -ms-transition: color 0.2s;
+  -o-transition: color 0.2s;
+  transition: color 0.2s;
+}
+.navlinks:hover {
+  color: #47b5ff !important;
+  -webkit-transition: color 0.2s;
+  -moz-transition: color 0.2s;
+  -ms-transition: color 0.2s;
+  -o-transition: color 0.2s;
+  transition: color 0.2s;
+}
+.currentlink {
+  color: #17a2ff !important;
+}
+
+.loginbtn {
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  width: 100px !important;
+  color: black;
+  background-color: lightgray;
+  /* padding: 10px 35px !important; */
+  outline: none !important;
+  border: none !important;
+  outline-offset: none !important;
+  box-shadow: none !important;
+  border-radius: 10px 10px 10px 10px;
+}
+@media only screen and (max-width: 991px) {
+  .loginbtn {
+    width: 100% !important;
+  }
 }

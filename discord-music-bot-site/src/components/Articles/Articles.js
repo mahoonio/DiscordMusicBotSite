@@ -1,7 +1,7 @@
 import AppHeader from '../AppHeader';
 
-const Home = () => {
+const Articles = () => {
   return <>{/* <AppHeader /> */}</>;
 };
 
-export default Home;
+export default Articles;
