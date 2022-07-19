@@ -25,9 +25,15 @@ function App() {
         {/* A <Routes> looks through its children <Route>s and
         renders the first one that matches the current URL. */}
         <Routes>
-          <Route path="/about">{/* <About /> */}</Route>
-          <Route path="/users">{/* <Users /> */}</Route>
-          <Route path="/">{/* <Home /> */}</Route>
+          <Route exact path="/articles">
+            {/* <About /> */}
+          </Route>
+          <Route exact path="/commands">
+            {/* <Users /> */}
+          </Route>
+          <Route exact path="/">
+            {/* <Home /> */}
+          </Route>
         </Routes>
       </div>
     </Router>
