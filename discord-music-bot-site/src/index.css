@@ -5,6 +5,7 @@
 DFF6FF
  */
 
+/* css reset */
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -86,4 +87,13 @@ h6 {
 #root,
 #__next {
   isolation: isolate;
+}
+/* css reset */
+.projecthighestdiv {
+  min-height: 100vh;
+  background: url(assets/background.jfif) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }

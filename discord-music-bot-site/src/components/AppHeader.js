@@ -20,7 +20,7 @@ const AppHeader = () => {
     setBtnContent('Login');
   };
   return (
-    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+    <Navbar collapseOnSelect expand="lg" bg="transparent" variant="dark">
       <Container>
         <Navbar.Brand className={`${styles.navbrand} d-flex`} href="/">
           <img src={robotIcon} width="50px" />
