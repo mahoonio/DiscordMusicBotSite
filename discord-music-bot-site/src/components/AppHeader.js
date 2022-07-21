@@ -10,7 +10,7 @@ import { IoIosLogIn } from 'react-icons/io';
 
 const AppHeader = () => {
   const location = useLocation();
-  const [btnContent, setBtnContent] = useState('LOGIN');
+  const [btnContent, setBtnContent] = useState('Login');
 
   console.log(location.pathname);
   const onBtnMouseEnter = () => {
@@ -46,7 +46,7 @@ const AppHeader = () => {
               Articles
             </Nav.Link>
           </Nav>
-          <Nav>
+          <Nav className={styles.loginbtnborderup}>
             <Button
               onMouseEnter={onBtnMouseEnter}
               // onMouseOut={onBtnMouseExit}

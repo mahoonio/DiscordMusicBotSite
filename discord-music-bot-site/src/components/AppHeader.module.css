@@ -47,7 +47,12 @@
   border-radius: 10px 10px 10px 10px;
 }
 @media only screen and (max-width: 991px) {
-  .loginbtn {
+  /* .loginbtn {
     width: 100% !important;
+  } */
+  .loginbtnborderup {
+    border-top: solid 1px gray !important;
+    padding: 5px;
+    width: 100%;
   }
 }
