@@ -9,3 +9,38 @@
 .sec1content {
   text-align: center;
 }
+.sectionsdesc {
+  color: rgb(255, 255, 255);
+  padding: 15px;
+}
+.sectionsdesc h3 {
+  font-size: 36px;
+  text-align: left;
+}
+.sectionsdesc p {
+  font-size: 20px;
+  text-align: left;
+  font-weight: 400;
+  line-height: 34px;
+}
+.sectionsdesc button {
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  min-width: 150px;
+  outline: none !important;
+  border: none !important;
+  outline-offset: none !important;
+  box-shadow: none !important;
+  border-radius: 10px 10px 10px 10px;
+  background-color: #1363df;
+  color: white;
+  transition: all 0.5s ease;
+  transform: scale(1);
+  font-size: 18px;
+}
+.sectionsdesc button:hover {
+  cursor: pointer;
+  transform: scale(1.25);
+  filter: brightness(120%);
+}

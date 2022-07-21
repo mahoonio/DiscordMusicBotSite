@@ -54,5 +54,6 @@
     border-top: solid 1px gray !important;
     padding: 5px;
     width: 100%;
+    padding-top: 10px;
   }
 }
