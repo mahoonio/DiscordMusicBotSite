@@ -40,8 +40,8 @@ const Home = () => {
                 <div className={`${styles.sectionsdesc}`}>
                   <h3>Easy to use control pannel on web!</h3>
                   <p>
-                    With Hydra's extensive web dashboard you're able to
-                    comfortably customize Hydra on the web without having to
+                    With Mylo's extensive web dashboard you're able to
+                    comfortably customize Mylo on the web without having to
                     remember any commands or syntaxes!
                   </p>
                   <Button>Customize now!</Button>
@@ -70,8 +70,8 @@ const Home = () => {
                 <div className={`${styles.sectionsdesc}`}>
                   <h3>Easy to use control pannel on web!</h3>
                   <p>
-                    With Hydra's extensive web dashboard you're able to
-                    comfortably customize Hydra on the web without having to
+                    With Mylo's extensive web dashboard you're able to
+                    comfortably customize Mylo on the web without having to
                     remember any commands or syntaxes!
                   </p>
                   <Button>Customize now!</Button>
