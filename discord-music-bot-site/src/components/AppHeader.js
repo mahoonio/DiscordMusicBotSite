@@ -24,7 +24,7 @@ const AppHeader = () => {
       <Container>
         <Navbar.Brand className={`${styles.navbrand} d-flex`} href="/">
           <img src={robotIcon} width="50px" />
-          <h2 className="mx-2">Yazdan</h2>
+          <h2 className="mx-2">Mylo</h2>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
