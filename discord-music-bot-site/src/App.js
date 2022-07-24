@@ -24,6 +24,7 @@ function App() {
 
           {/* <Home /> */}
         </Routes>
+        <Footer />
       </div>
     </Router>
   );
