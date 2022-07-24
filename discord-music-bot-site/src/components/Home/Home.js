@@ -5,6 +5,7 @@ import 'aos/dist/aos.css';
 import { useEffect } from 'react';
 import sec1pic from '../../assets/sec1pic.png';
 import { Button, Col, Container, Row } from 'react-bootstrap';
+import { CgScrollV } from 'react-icons/cg';
 
 const Home = () => {
   useEffect(() => {
@@ -14,12 +15,15 @@ const Home = () => {
   return (
     <div>
       <div className={styles.titlecontent}>
-        <h1 style={{ color: 'white', fontSize: '72px' }}>
-          The Best Music Bot For Discord.
-        </h1>
-        <p style={{ fontSize: '30px' }} className="text-secondary">
-          You wont need anything else,ever!
-        </p>
+        <div>
+          <h1 style={{ color: 'white', fontSize: '72px' }}>
+            The Best Music Bot For Discord.
+          </h1>
+          <p style={{ fontSize: '36px' }} className="text-secondary">
+            You wont need anything else,ever!
+          </p>
+        </div>
+        <button className={styles.scrollbutton}></button>
       </div>
       <div className={`${styles.section1}`}>
         <div className={`${styles.sec1content}`} data-aos="fade-up">
