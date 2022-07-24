@@ -12,6 +12,7 @@ const Home = () => {
     Aos.init({ duration: '600' });
     Aos.refresh();
   }, []);
+
   return (
     <div>
       <div className={styles.titlecontent}>
@@ -23,8 +24,8 @@ const Home = () => {
             You wont need anything else,ever!
           </p>
         </div>
-        <button className={styles.scrollbutton}></button>
       </div>
+
       <div className={`${styles.section1}`}>
         <div className={`${styles.sec1content}`} data-aos="fade-up">
           <Container>
