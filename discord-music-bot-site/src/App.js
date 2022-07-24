@@ -6,6 +6,7 @@ import AppHeader from './components/AppHeader';
 import Articles from './components/Articles/Articles';
 import Commands from './components/Commands/Commands';
 import Home from './components/Home/Home';
+import Footer from './components/Footer';
 function App() {
   return (
     <Router>
