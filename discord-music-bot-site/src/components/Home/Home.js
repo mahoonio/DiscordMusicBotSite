@@ -25,11 +25,11 @@ const Home = () => {
         <div className={`${styles.sec1content}`} data-aos="fade-up">
           <Container>
             <Row className="justify-content-center align-items-center">
-              <Col xs={12} lg={6}>
+              <Col xs={12} lg={{ span: 6, offset: 1 }}>
                 <img
                   src={sec1pic}
                   alt="web control pannel"
-                  style={{ width: '800px' }}
+                  style={{ width: '900px' }}
                 />
               </Col>
               <Col
@@ -51,21 +51,13 @@ const Home = () => {
           </Container>
         </div>
       </div>
-      <div className={`${styles.section2}`}>
-        <div className={`${styles.sec2content}`} data-aos="fade-up">
+      <div className={`${styles.section1}`}>
+        <div className={`${styles.sec1content}`} data-aos="fade-up">
           <Container>
             <Row className="justify-content-center align-items-center">
-              <Col xs={12} lg={6}>
-                <img
-                  src={sec1pic}
-                  alt="web control pannel"
-                  style={{ width: '800px' }}
-                />
-              </Col>
               <Col
                 style={{ height: '100% !important' }}
                 xs={{ order: 'first' }}
-                lg={{ order: 'last' }}
               >
                 <div className={`${styles.sectionsdesc}`}>
                   <h3>Easy to use control pannel on web!</h3>
@@ -76,6 +68,13 @@ const Home = () => {
                   </p>
                   <Button>Customize now!</Button>
                 </div>
+              </Col>
+              <Col xs={12} lg={6}>
+                <img
+                  src={sec1pic}
+                  alt="web control pannel"
+                  style={{ width: '800px' }}
+                />
               </Col>
             </Row>
           </Container>
