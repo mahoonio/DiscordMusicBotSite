@@ -1,4 +1,21 @@
 .appfootermaincontainer {
   background-color: black;
   height: 400px;
+  padding: 30px;
+}
+.appfootermaincontainer h3 {
+  color: white;
+  font-size: 36px;
+}
+.appfootermaincontainer h5 {
+  color: white;
+  font-size: 24px;
+}
+.footerlink,
+.footerlink:focus,
+.footerlink:active {
+  outline: 0 !important;
+  border: none !important;
+  outline-style: none !important;
+  font-size: 20px !important;
 }
