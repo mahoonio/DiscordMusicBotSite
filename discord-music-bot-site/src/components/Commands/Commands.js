@@ -1,7 +1,6 @@
-import AppHeader from '../AppHeader';
-
+import styles from './Commands.module.css';
 const Commands = () => {
-  return <>{/* <AppHeader /> */}</>;
+  return <div className={`${styles.commandscnt}`}></div>;
 };
 
 export default Commands;
