@@ -3,6 +3,9 @@ import { useState, useEffect } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import commandMock from '../../mock/commandMock';
 import axios from 'axios';
+import React from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const Commands = () => {
   const [allCommands, setAllCommands] = useState([]);
   useEffect(() => {
@@ -16,26 +19,37 @@ const Commands = () => {
         setAllCommands(res.data);
       })
       .catch((err) => {
-        alert(
-          'there was a problem connecting to the server. \nif you are in iran,use VPN'
+        toast.error(
+          'there was a problem connecting to the server.if you have internet restrictions please use VPN',
+          {
+            position: 'top-center',
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+          }
         );
       });
     setAllCommands(commandMock);
-    return;
   }, []);
   return (
-    <div className={`${styles.commandscnt}`}>
-      {commandMock && (
-        <Container className="h-100">
-          <Row className="h-100">
-            <Col>
-              <div className={`${styles.filterscnt}`}></div>
-            </Col>
-            <Col></Col>
-          </Row>
-        </Container>
-      )}
-    </div>
+    <>
+      <ToastContainer />
+      <div className={`${styles.commandscnt}`}>
+        {commandMock && (
+          <Container className="h-100">
+            <Row className="h-100">
+              <Col>
+                <div className={`${styles.filterscnt}`}></div>
+              </Col>
+              <Col></Col>
+            </Row>
+          </Container>
+        )}
+      </div>
+    </>
   );
 };
 
