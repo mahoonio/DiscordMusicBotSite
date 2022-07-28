@@ -1,3 +1,31 @@
 .commandscnt {
   min-height: 70vh;
+  margin-top: 5vh;
+}
+.filterscnt {
+  background-color: #232323;
+  padding: 10px 10px;
+  border-radius: 20px;
+}
+.filterdiv {
+  background-color: #585858;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  margin: 10px auto;
+  cursor: pointer;
+  border-radius: 10px;
+  font-size: 16px;
+  padding: 5px;
+  min-width: 15%;
+}
+.filteractive {
+  background-color: #47b5ff;
+  color: black;
+}
+@media only screen and (min-width: 768px) {
+  .filterdiv {
+    font-size: 24px;
+    width: 75%;
+  }
 }

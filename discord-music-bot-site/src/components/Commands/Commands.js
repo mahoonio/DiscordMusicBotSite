@@ -8,6 +8,10 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 const Commands = () => {
   const [allCommands, setAllCommands] = useState([]);
+  const [filter, setFilter] = useState('everyone');
+  const changeFilter = (targetFilter) => {
+    setFilter(targetFilter);
+  };
   useEffect(() => {
     axios
       .get('https://mylo-website.herokuapp.com/api/commands/', {
@@ -40,8 +44,41 @@ const Commands = () => {
       {commandMock && (
         <Container className="h-100">
           <Row className="h-100">
-            <Col>
-              <div className={`${styles.filterscnt}`}></div>
+            <Col xs={12} md={3}>
+              <div className={`${styles.filterscnt}  d-flex flex-md-column `}>
+                <div
+                  onClick={() => changeFilter('everyone')}
+                  className={`${styles.filterdiv} ${
+                    filter === 'everyone' && styles.filteractive
+                  }`}
+                >
+                  Everyone
+                </div>
+                <div
+                  onClick={() => changeFilter('dj')}
+                  className={`${styles.filterdiv} ${
+                    filter === 'dj' && styles.filteractive
+                  }`}
+                >
+                  DJ
+                </div>
+                <div
+                  onClick={() => changeFilter('admin')}
+                  className={`${styles.filterdiv} ${
+                    filter === 'admin' && styles.filteractive
+                  }`}
+                >
+                  Admin
+                </div>
+                <div
+                  onClick={() => changeFilter('premium')}
+                  className={`${styles.filterdiv} ${
+                    filter === 'premium' && styles.filteractive
+                  }`}
+                >
+                  Premium
+                </div>
+              </div>
             </Col>
             <Col></Col>
           </Row>
