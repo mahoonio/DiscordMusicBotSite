@@ -7,9 +7,11 @@ import React from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Filter from './Filter';
+import CommandsList from './CommandsList';
 const Commands = () => {
   const [allCommands, setAllCommands] = useState([]);
   const [filter, setFilter] = useState('everyone');
+  const [searchKey, setSearchKey] = useState('');
   const changeFilter = (targetFilter) => {
     setFilter(targetFilter);
   };
@@ -52,7 +54,9 @@ const Commands = () => {
                 changeFilter={changeFilter}
               />
             </Col>
-            <Col></Col>
+            <Col>
+              <CommandsList />
+            </Col>
           </Row>
         </Container>
       )}

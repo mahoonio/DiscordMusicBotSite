@@ -23,6 +23,16 @@
   background-color: #47b5ff;
   color: black;
 }
+.searchinput {
+  background-color: #232323;
+  border: 0;
+  outline: 0;
+  height: 60px;
+  padding: 10px;
+  border-radius: 15px;
+  color: white;
+  font-size: 24px;
+}
 @media only screen and (min-width: 768px) {
   .filterdiv {
     font-size: 24px;
