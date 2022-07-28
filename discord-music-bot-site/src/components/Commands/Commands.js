@@ -35,21 +35,19 @@ const Commands = () => {
     setAllCommands(commandMock);
   }, []);
   return (
-    <>
+    <div className={`${styles.commandscnt}`}>
       <ToastContainer />
-      <div className={`${styles.commandscnt}`}>
-        {commandMock && (
-          <Container className="h-100">
-            <Row className="h-100">
-              <Col>
-                <div className={`${styles.filterscnt}`}></div>
-              </Col>
-              <Col></Col>
-            </Row>
-          </Container>
-        )}
-      </div>
-    </>
+      {commandMock && (
+        <Container className="h-100">
+          <Row className="h-100">
+            <Col>
+              <div className={`${styles.filterscnt}`}></div>
+            </Col>
+            <Col></Col>
+          </Row>
+        </Container>
+      )}
+    </div>
   );
 };
 

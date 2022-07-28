@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <div className={styles.appfootermaincontainer}>
       <Container>
-        <div className="d-flex justify-content-between h-100">
+        <div className="d-flex flex-column flex-md-row justify-content-between h-100">
           <div>
             <h3>Mylo</h3>
             <h5>The Best Music Bot For Discord.</h5>
@@ -15,23 +15,22 @@ const Footer = () => {
               mahan mahmoodi.
             </div>
           </div>
-          <div className="d-flex justify-content-around align-items-center w-100 h-100">
-            <div>
+          <div className="d-flex flex-wrap flex-md-nowrap flex-column flex-md-row justify-content-around align-items-start justify-content-md-around align-items-md-center w-100 h-100">
+            <div className="my-3">
               <h5>Product</h5>
-              <Link className={styles.footerlink} to={'/commands'}>
+              <a className={styles.footerlink} href={'/commands'}>
                 Commands
-              </Link>
+              </a>
             </div>
-            <div>
+            <div className="my-3">
               <h5>Resources</h5>
-              <Link className={styles.footerlink} to={'/articles'}>
+              <a className={styles.footerlink} href={'/articles'}>
                 Articles
-              </Link>
+              </a>
             </div>
-            <div>
+            <div className="my-3">
               <h5>Business</h5>
               <a
-                style={{ border: 'none', outline: 'none' }}
                 className={styles.footerlink}
                 href={'mailto:m.mahmodi1380@gmail.com'}
               >
