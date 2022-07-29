@@ -1,9 +1,11 @@
 import styles from './Commands.module.css';
 import Command from './Command';
-const CommandsList = () => {
+const CommandsList = ({ shownCommands }) => {
   return (
     <div>
-      <Command />
+      {shownCommands.map((cmd, idx) => (
+        <Command cmd={cmd} key={idx} />
+      ))}
     </div>
   );
 };

@@ -5,33 +5,33 @@ const Filter = ({ filter, setFilter, changeFilter }) => {
   return (
     <div className={`${styles.filterscnt}  d-flex flex-md-column `}>
       <div
-        onClick={() => changeFilter('everyone')}
+        onClick={() => changeFilter('Everyone')}
         className={`${styles.filterdiv} ${
-          filter === 'everyone' && styles.filteractive
+          filter === 'Everyone' && styles.filteractive
         }`}
       >
         Everyone
       </div>
       <div
-        onClick={() => changeFilter('dj')}
+        onClick={() => changeFilter('DJ')}
         className={`${styles.filterdiv} ${
-          filter === 'dj' && styles.filteractive
+          filter === 'DJ' && styles.filteractive
         }`}
       >
         DJ
       </div>
       <div
-        onClick={() => changeFilter('admin')}
+        onClick={() => changeFilter('Admin')}
         className={`${styles.filterdiv} ${
-          filter === 'admin' && styles.filteractive
+          filter === 'Admin' && styles.filteractive
         }`}
       >
         Admin
       </div>
       <div
-        onClick={() => changeFilter('premium')}
+        onClick={() => changeFilter('Premium')}
         className={`${styles.filterdiv} ${
-          filter === 'premium' && styles.filteractive
+          filter === 'Premium' && styles.filteractive
         }`}
       >
         Premium
