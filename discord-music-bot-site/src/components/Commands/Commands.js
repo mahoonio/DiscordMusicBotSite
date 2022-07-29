@@ -12,9 +12,12 @@ const Commands = () => {
   const [allCommands, setAllCommands] = useState([]);
   const [filter, setFilter] = useState('everyone');
   const [searchKey, setSearchKey] = useState('');
+  const [shownCommands, setShownCommands] = useState(allCommands);
   const changeFilter = (targetFilter) => {
     setFilter(targetFilter);
   };
+
+  const onSearch = (e) => {};
   useEffect(() => {
     axios
       .get('https://mylo-website.herokuapp.com/api/commands/', {
@@ -41,6 +44,8 @@ const Commands = () => {
       });
     setAllCommands(commandMock);
   }, []);
+  useEffect(() => {}, [filter]);
+  useEffect(() => {}, [searchKey]);
   return (
     <div className={`${styles.commandscnt}`}>
       <ToastContainer />
@@ -55,7 +60,12 @@ const Commands = () => {
               />
             </Col>
             <Col>
-              <CommandsList />
+              <input
+                placeholder="Search..."
+                className={`${styles.searchinput} w-100`}
+                onChange={onSearch}
+              />
+              <CommandsList shownCommands={shownCommands} />
             </Col>
           </Row>
         </Container>
