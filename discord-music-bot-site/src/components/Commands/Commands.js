@@ -17,7 +17,9 @@ const Commands = () => {
     setFilter(targetFilter);
   };
 
-  const onSearch = (e) => {};
+  const onSearch = (e) => {
+    setSearchKey(e.target.value);
+  };
   useEffect(() => {
     axios
       .get('https://mylo-website.herokuapp.com/api/commands/', {
@@ -45,31 +47,33 @@ const Commands = () => {
     setAllCommands(commandMock);
   }, []);
   useEffect(() => {}, [filter]);
-  useEffect(() => {}, [searchKey]);
+  useEffect(() => {
+    console.log('search key : ', searchKey);
+    if (searchKey === '') setShownCommands(allCommands);
+    let searchedCmds = allCommands.filter((cmd, idx) => {});
+  }, [searchKey]);
   return (
     <div className={`${styles.commandscnt}`}>
       <ToastContainer />
-      {commandMock && (
-        <Container className="h-100">
-          <Row className="h-100">
-            <Col xs={12} md={3}>
-              <Filter
-                filter={filter}
-                setFilter={setFilter}
-                changeFilter={changeFilter}
-              />
-            </Col>
-            <Col>
-              <input
-                placeholder="Search..."
-                className={`${styles.searchinput} w-100`}
-                onChange={onSearch}
-              />
-              <CommandsList shownCommands={shownCommands} />
-            </Col>
-          </Row>
-        </Container>
-      )}
+      <Container className="h-100">
+        <Row className="h-100">
+          <Col xs={12} md={3}>
+            <Filter
+              filter={filter}
+              setFilter={setFilter}
+              changeFilter={changeFilter}
+            />
+          </Col>
+          <Col>
+            <input
+              placeholder="Search..."
+              className={`${styles.searchinput} w-100 mb-3`}
+              onChange={onSearch}
+            />
+            <CommandsList shownCommands={shownCommands} />
+          </Col>
+        </Row>
+      </Container>
     </div>
   );
 };

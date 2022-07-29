@@ -33,6 +33,15 @@
   color: white;
   font-size: 24px;
 }
+.eachcmdcntr {
+  background-color: #232323;
+  color: white;
+  border-radius: 15px;
+}
+.cmddescsection {
+  background-color: #434343;
+  border-radius: 15px;
+}
 @media only screen and (min-width: 768px) {
   .filterdiv {
     font-size: 24px;
