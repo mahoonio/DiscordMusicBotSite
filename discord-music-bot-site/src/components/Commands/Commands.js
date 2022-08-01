@@ -73,9 +73,9 @@ const Commands = () => {
     }
     let searchedCmds = allCommands.filter((cmd, idx) => {
       if (
-        cmd.name.includes(searchKey) ||
-        cmd.description.includes(searchKey) ||
-        cmd.aliases.includes(searchKey)
+        cmd.name.toLowerCase().includes(searchKey) ||
+        cmd.description.toLowerCase().includes(searchKey) ||
+        cmd.aliases.toLowerCase().includes(searchKey)
       ) {
         return true;
       } else {
