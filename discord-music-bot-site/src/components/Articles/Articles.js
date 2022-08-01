@@ -4,6 +4,8 @@ import { useState, useEffect } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
+import { Card, Container, card } from 'react-bootstrap';
+import Article from './Article';
 
 const Articles = () => {
   const [allArticles, setAllArticles] = useState([]);
@@ -35,7 +37,53 @@ const Articles = () => {
       });
   }, []);
 
-  return <div className={styles.articlescnt}></div>;
+  return (
+    <div className={styles.articlescnt}>
+      <ToastContainer />
+      <Container>
+        <h1 style={{ color: 'white', fontSize: '72px' }}>All Articles</h1>
+        <div className="d-flex justify-content-around justify-content-lg-start flex-wrap">
+          {allArticles.map((article, idx) => (
+            <Article article={article} />
+          ))}
+
+          <Card className={`m-4 ${styles.articlecard}`}>
+            <Card.Header className={`${styles.articlecardheader}`}>
+              how to do folan
+            </Card.Header>
+            <Card.Body className={`${styles.articlecardbody}`}>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus,
+              quaerat. Ullam enim minus officia fuga vitae. Consequuntur, quos
+              vitae totam sint voluptate asperiores, officia doloribus, sapiente
+              culpa sunt aut nulla
+            </Card.Body>
+          </Card>
+          <Card className={`m-4 ${styles.articlecard}`}>
+            <Card.Header className={`${styles.articlecardheader}`}>
+              how to do folan
+            </Card.Header>
+            <Card.Body className={`${styles.articlecardbody}`}>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus,
+              quaerat. Ullam enim minus officia fuga vitae. Consequuntur, quos
+              vitae totam sint voluptate asperiores, officia doloribus, sapiente
+              culpa sunt aut nulla
+            </Card.Body>
+          </Card>
+          <Card className={`m-4 ${styles.articlecard}`}>
+            <Card.Header className={`${styles.articlecardheader}`}>
+              how to do folan
+            </Card.Header>
+            <Card.Body className={`${styles.articlecardbody}`}>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus,
+              quaerat. Ullam enim minus officia fuga vitae. Consequuntur, quos
+              vitae totam sint voluptate asperiores, officia doloribus, sapiente
+              culpa sunt aut nulla
+            </Card.Body>
+          </Card>
+        </div>
+      </Container>
+    </div>
+  );
 };
 
 export default Articles;
