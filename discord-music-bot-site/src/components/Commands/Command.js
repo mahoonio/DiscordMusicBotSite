@@ -7,6 +7,9 @@ const Command = ({ cmd }) => {
       <div className={`${styles.cmddescsection} p-2`}>
         <h5>{cmd.description}</h5>
         <p>Aliases: {cmd.aliases}</p>
+        {cmd.field !== 'Everyone' ? (
+          <div className={styles.cmdpermission}>Permission: {cmd.field}</div>
+        ) : null}
       </div>
     </div>
   );

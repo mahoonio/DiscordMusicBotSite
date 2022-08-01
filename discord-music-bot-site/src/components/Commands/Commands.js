@@ -10,7 +10,7 @@ import Filter from './Filter';
 import CommandsList from './CommandsList';
 const Commands = () => {
   const [allCommands, setAllCommands] = useState([]);
-  const [filter, setFilter] = useState('Everyone');
+  const [filter, setFilter] = useState('All');
   const [searchKey, setSearchKey] = useState('');
   const [shownCommands, setShownCommands] = useState(allCommands);
   const changeFilter = (targetFilter) => {
@@ -20,6 +20,17 @@ const Commands = () => {
   const onSearch = (e) => {
     setSearchKey(e.target.value);
   };
+
+  const filterCommands = () => {
+    if (filter === 'All') {
+      setShownCommands(allCommands);
+      return;
+    }
+    let filteredCmds = allCommands.filter((cmd, idx) => cmd.field === filter);
+    setSearchKey('');
+    setShownCommands(filteredCmds);
+  };
+
   useEffect(() => {
     axios
       .get('https://mylo-website.herokuapp.com/api/commands/', {
@@ -29,6 +40,9 @@ const Commands = () => {
       })
       .then((res) => {
         setAllCommands(res.data);
+        return res;
+      })
+      .then((res) => {
         setShownCommands(res.data);
       })
       .catch((err) => {
@@ -46,22 +60,35 @@ const Commands = () => {
         );
       });
   }, []);
+  useEffect(() => {}, [shownCommands]);
 
   useEffect(() => {
-    let filteredCmds = allCommands.filter((cmd, idx) => cmd.field === filter);
-    setSearchKey('');
-    setShownCommands(filteredCmds);
+    filterCommands();
   }, [filter]);
   useEffect(() => {
-    console.log('search key : ', searchKey);
-    if (searchKey === '') setShownCommands(allCommands);
-    let searchedCmds = allCommands.filter((cmd, idx) => {});
+    if (searchKey === '') {
+      // filters the commands with the last filter and returns
+      filterCommands();
+      return;
+    }
+    let searchedCmds = allCommands.filter((cmd, idx) => {
+      if (
+        cmd.name.includes(searchKey) ||
+        cmd.description.includes(searchKey) ||
+        cmd.aliases.includes(searchKey)
+      ) {
+        return true;
+      } else {
+        return false;
+      }
+    });
+    setShownCommands(searchedCmds);
   }, [searchKey]);
 
   return (
     <div className={`${styles.commandscnt}`}>
       <ToastContainer />
-      {allCommands && (
+      {shownCommands && (
         <Container className="h-100">
           <Row className="h-100">
             <Col xs={12} md={3}>
@@ -78,7 +105,20 @@ const Commands = () => {
                 className={`${styles.searchinput} w-100 mb-3`}
                 onChange={onSearch}
               />
-              <CommandsList shownCommands={shownCommands} />
+              {shownCommands.length !== 0 ? (
+                <CommandsList shownCommands={shownCommands} />
+              ) : (
+                <div
+                  className="mx-auto"
+                  style={{
+                    color: 'white',
+                    textAlign: 'center',
+                    fontSize: '24px',
+                  }}
+                >
+                  No commands found!
+                </div>
+              )}
             </Col>
           </Row>
         </Container>

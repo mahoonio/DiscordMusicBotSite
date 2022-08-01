@@ -3,7 +3,15 @@ import styles from './Commands.module.css';
 
 const Filter = ({ filter, setFilter, changeFilter }) => {
   return (
-    <div className={`${styles.filterscnt}  d-flex flex-md-column `}>
+    <div className={`${styles.filterscnt}  d-flex flex-md-column mb-3`}>
+      <div
+        onClick={() => changeFilter('All')}
+        className={`${styles.filterdiv} ${
+          filter === 'All' && styles.filteractive
+        }`}
+      >
+        All
+      </div>
       <div
         onClick={() => changeFilter('Everyone')}
         className={`${styles.filterdiv} ${
