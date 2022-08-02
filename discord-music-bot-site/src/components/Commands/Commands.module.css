@@ -1,0 +1,64 @@
+.commandscnt {
+  min-height: 70vh;
+  margin-top: 5vh;
+}
+.filterscnt {
+  background-color: #232323;
+  padding: 10px 10px;
+  border-radius: 20px;
+}
+.filterdiv {
+  background-color: #585858;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  margin: 10px auto;
+  cursor: pointer;
+  border-radius: 10px;
+  font-size: 14px;
+  padding: 5px;
+  min-width: 15%;
+}
+.filteractive {
+  background-color: #47b5ff;
+  color: black;
+}
+.searchinput {
+  background-color: #232323;
+  border: 0;
+  outline: 0;
+  height: 60px;
+  padding: 10px;
+  border-radius: 15px;
+  color: white;
+  font-size: 24px;
+}
+.eachcmdcntr {
+  background-color: #232323;
+  color: white;
+  border-radius: 15px;
+}
+.cmddescsection {
+  background-color: #434343;
+  border-radius: 15px;
+}
+.cmddescsection p {
+  font-weight: 400;
+  font-size: 18px;
+}
+.cmdpermission {
+  background-color: #232323;
+  border-radius: 15px;
+  width: 50%;
+  padding: 10px;
+  font-size: 16px;
+}
+@media only screen and (min-width: 768px) {
+  .filterdiv {
+    font-size: 24px;
+    width: 75%;
+  }
+  .cmdpermission {
+    width: 20%;
+  }
+}
