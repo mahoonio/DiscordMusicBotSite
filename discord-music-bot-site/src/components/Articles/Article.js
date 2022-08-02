@@ -33,8 +33,10 @@ const Article = ({ article }) => {
           1 min read . {article.date.replaceAll('-', '/')}
         </div>
         <div className={styles.articletagsec}>
-          {tags.map((tag) => (
-            <div className={`d-inline mx-2 ${styles.articletag}`}>{tag}</div>
+          {tags.map((tag, idx) => (
+            <div key={idx} className={`d-inline mx-2 ${styles.articletag}`}>
+              {tag}
+            </div>
           ))}
         </div>
       </Card.Footer>

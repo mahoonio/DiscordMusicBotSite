@@ -7,6 +7,7 @@ import Articles from './components/Articles/Articles';
 import Commands from './components/Commands/Commands';
 import Home from './components/Home/Home';
 import Footer from './components/Footer';
+import SingleArticlePage from './components/Articles/SingleArticlePage';
 function App() {
   return (
     <Router>
@@ -14,16 +15,13 @@ function App() {
         <AppHeader />
         <Routes>
           <Route exact path="/articles" element={<Articles />} />
-
-          {/* <About /> */}
-
+          <Route
+            exact
+            path="/article/:articleName"
+            element={<SingleArticlePage />}
+          />
           <Route exact path="/commands" element={<Commands />} />
-          {/* <Users /> */}
-
           <Route exact path="/" element={<Home />} />
-          <Route exact path="/articles/:articleName" element={<article />} />
-
-          {/* <Home /> */}
         </Routes>
         <footer>
           <Footer />

@@ -44,7 +44,7 @@ const Articles = () => {
         <h1 style={{ color: 'white', fontSize: '72px' }}>All Articles</h1>
         <div className="d-flex justify-content-around justify-content-lg-start flex-wrap">
           {allArticles.map((article, idx) => (
-            <Article article={article} />
+            <Article key={idx} article={article} />
           ))}
 
           <Card className={`m-4 ${styles.articlecard}`}>
