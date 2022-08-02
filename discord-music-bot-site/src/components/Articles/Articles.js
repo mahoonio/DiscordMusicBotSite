@@ -46,40 +46,6 @@ const Articles = () => {
           {allArticles.map((article, idx) => (
             <Article key={idx} article={article} />
           ))}
-
-          <Card className={`m-4 ${styles.articlecard}`}>
-            <Card.Header className={`${styles.articlecardheader}`}>
-              how to do folan
-            </Card.Header>
-            <Card.Body className={`${styles.articlecardbody}`}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus,
-              quaerat. Ullam enim minus officia fuga vitae. Consequuntur, quos
-              vitae totam sint voluptate asperiores, officia doloribus, sapiente
-              culpa sunt aut nulla
-            </Card.Body>
-          </Card>
-          <Card className={`m-4 ${styles.articlecard}`}>
-            <Card.Header className={`${styles.articlecardheader}`}>
-              how to do folan
-            </Card.Header>
-            <Card.Body className={`${styles.articlecardbody}`}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus,
-              quaerat. Ullam enim minus officia fuga vitae. Consequuntur, quos
-              vitae totam sint voluptate asperiores, officia doloribus, sapiente
-              culpa sunt aut nulla
-            </Card.Body>
-          </Card>
-          <Card className={`m-4 ${styles.articlecard}`}>
-            <Card.Header className={`${styles.articlecardheader}`}>
-              how to do folan
-            </Card.Header>
-            <Card.Body className={`${styles.articlecardbody}`}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus,
-              quaerat. Ullam enim minus officia fuga vitae. Consequuntur, quos
-              vitae totam sint voluptate asperiores, officia doloribus, sapiente
-              culpa sunt aut nulla
-            </Card.Body>
-          </Card>
         </div>
       </Container>
     </div>
