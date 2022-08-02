@@ -10,6 +10,8 @@ const SingleArticlePage = () => {
   const [article, setArticle] = useState(null);
   const [hintText, setHintText] = useState('Loading...');
   const { articleName } = useParams();
+  const [tags, setTags] = useState([]);
+
   useEffect(() => {
     axios
       .get('https://mylo-website.herokuapp.com/api/articles/', {
@@ -20,10 +22,10 @@ const SingleArticlePage = () => {
       .then((res) => {
         setAllArticles(res.data);
         console.log('articles : ', res.data);
-        return allArticles;
+        return res;
       })
-      .then((allArticles) => {
-        let basedOnParamsArticle = allArticles.find(
+      .then((res) => {
+        let basedOnParamsArticle = res.data.find(
           (art) => art.title.replace(' ', '-') === articleName
         );
         if (basedOnParamsArticle === undefined) {
@@ -33,7 +35,15 @@ const SingleArticlePage = () => {
           setArticle(basedOnParamsArticle);
         }
       })
+      .then(() => {
+        if (article) {
+          let seperatodTags = article.tags.replaceAll(' ', '').split(',');
+          setTags(seperatodTags);
+        }
+      })
+
       .catch((err) => {
+        console.log('error : ', err);
         toast.error(
           'there was a problem connecting to the server.if you have internet restrictions please use VPN',
           {
@@ -60,7 +70,28 @@ const SingleArticlePage = () => {
             {hintText}
           </div>
         ) : (
-          <h1>{article.title}</h1>
+          <div>
+            {' '}
+            <div className={styles.maintitlesec}>
+              <h1 className={`mb-4 ${styles.maintitle}`}>{article.title}</h1>
+              <div className={styles.articletagsec}>
+                {tags.map((tag, idx) => (
+                  <div
+                    key={idx}
+                    className={`d-inline mx-2 ${styles.articletag}`}
+                  >
+                    {tag}
+                  </div>
+                ))}
+              </div>
+            </div>
+            <h2 className={`${styles.maintitle}`}>
+              {article.description.par1.title}
+            </h2>
+            <p className={`${styles.paragraph}`}>
+              {article.description.par1.description}
+            </p>
+          </div>
         )}
       </Container>
     </div>
