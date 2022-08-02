@@ -21,6 +21,7 @@ function App() {
           {/* <Users /> */}
 
           <Route exact path="/" element={<Home />} />
+          <Route exact path="/articles/:articleName" element={<article />} />
 
           {/* <Home /> */}
         </Routes>

@@ -11,7 +11,8 @@ const Article = ({ article }) => {
   }, []);
   const redirectToArticlePage = () => {
     navigate(`/article/${article.title.replaceAll(' ', '-')}`, {
-      state: article,
+      state: article, // not used just to be a reminder. in the destinition location
+      // we will use Params
     });
   };
   return (
