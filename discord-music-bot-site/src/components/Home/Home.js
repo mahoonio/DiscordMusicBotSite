@@ -6,10 +6,11 @@ import { useEffect } from 'react';
 import sec1pic from '../../assets/sec1pic.png';
 import { Button, Col, Container, Row } from 'react-bootstrap';
 import { CgScrollV } from 'react-icons/cg';
+import invitePic from '../../assets/invitePic.png';
 
 const Home = () => {
   useEffect(() => {
-    Aos.init({ duration: '600' });
+    Aos.init({ duration: '1200' });
     Aos.refresh();
   }, []);
 
@@ -82,6 +83,36 @@ const Home = () => {
                 />
               </Col>
             </Row>
+          </Container>
+        </div>
+      </div>
+      <div className={`${styles.section1}`}>
+        <div className={`${styles.sec1content}`} data-aos="fade-up">
+          <Container>
+            <div className="d-flex flex-column justify-content-center">
+              <Row>
+                <Col xs={{ span: 6, offset: 3 }}>
+                  {' '}
+                  <img
+                    src={invitePic}
+                    alt="invite pic"
+                    style={{ width: '500px' }}
+                  />
+                  <div className={`${styles.sectionsdesc}`}>
+                    <h1 style={{ fontSize: '55px', fontWeight: 700 }}>
+                      Ready to Get Started?
+                    </h1>
+                    <p style={{ fontSize: '26px' }} className="text-center">
+                      Invite Mylo from your dashboard now and start enjoying the
+                      best features available on Discord!
+                    </p>
+                    <Button size="lg" className="mx-auto mb-3">
+                      Customize now!
+                    </Button>
+                  </div>
+                </Col>
+              </Row>
+            </div>
           </Container>
         </div>
       </div>

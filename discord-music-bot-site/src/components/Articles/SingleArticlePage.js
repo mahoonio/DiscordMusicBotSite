@@ -35,12 +35,6 @@ const SingleArticlePage = () => {
           setArticle(basedOnParamsArticle);
         }
       })
-      .then(() => {
-        if (article) {
-          let seperatodTags = article.tags.replaceAll(' ', '').split(',');
-          setTags(seperatodTags);
-        }
-      })
 
       .catch((err) => {
         console.log('error : ', err);
@@ -75,14 +69,17 @@ const SingleArticlePage = () => {
             <div className={styles.maintitlesec}>
               <h1 className={`mb-4 ${styles.maintitle}`}>{article.title}</h1>
               <div className={styles.articletagsec}>
-                {tags.map((tag, idx) => (
-                  <div
-                    key={idx}
-                    className={`d-inline mx-2 ${styles.articletag}`}
-                  >
-                    {tag}
-                  </div>
-                ))}
+                {article.tags
+                  .replaceAll(' ', '')
+                  .split(',')
+                  .map((tag, idx) => (
+                    <div
+                      key={idx}
+                      className={`d-inline mx-2 ${styles.articletag}`}
+                    >
+                      {tag}
+                    </div>
+                  ))}
               </div>
             </div>
             <h2 className={`${styles.maintitle}`}>
