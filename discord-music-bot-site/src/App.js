@@ -32,3 +32,8 @@ function App() {
 }
 
 export default App;
+
+// this project is built by mahan mahmoodi
+// for the client yazdan zeynal zade
+// with the contrubition of yazdan
+// for the rest api's
